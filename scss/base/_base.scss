@@ -11,4 +11,29 @@ html {
 body {
   font-size: 1.6rem;
   font-family: Gordita, sans-serif;
+  scroll-behavior: smooth;
+  color: var(--text-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
+.icon {
+  filter: var(--icon-color);
 }
