@@ -1,0 +1,132 @@
+@use "../abstract";
+
+.dropdown {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  padding-top: 54px;
+  width: min(1240px, 100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+
+  &__inner {
+    --inner-padding: 30px;
+    position: relative;
+    padding: var(--inner-padding);
+    border-radius: 20px;
+    background: var(--dropdown-bg);
+    box-shadow: 0px 40px 90px 20px var(--dropdown-shadow);
+
+    &::before {
+      content: url("../../assets/icons/drow-down-arrow.svg");
+      position: absolute;
+      top: -13px;
+      left: var(--arrow-left-pos);
+      transform: translateX(-50%);
+      filter: var(--dropdown-arrow);
+    }
+  }
+}
+
+.top-menu {
+  --inner-max-height: min(582px, 100vh - 158px);
+  --main-column-width: 292px;
+
+  position: relative;
+  &__main {
+    max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+    width: var(--main-column-width);
+    border-right: 1.5px solid var(--top-menu-border);
+    overflow-y: auto;
+  }
+}
+
+.menu-column {
+  display: flex;
+  column-gap: 14px;
+
+  &__icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+
+    @include abstract.breakpoint(xl) {
+      display: none;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__icon-1 {
+    object-fit: contain;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__icon-2 {
+    object-fit: contain;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    filter: var(--menu-column-icon);
+  }
+
+  &__heading {
+    margin-top: 4px;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__list {
+    margin-top: 20px;
+  }
+
+  &__item {
+    &:hover .sub-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item:hover > &__link {
+    color: #0071dc;
+    text-shadow: 0px 0px 1px #0071dc;
+  }
+
+  &__link {
+    display: block;
+    padding: 7px 0;
+    font-size: 1.4rem;
+    line-height: 1.42;
+  }
+}
+
+.sub-menu {
+  position: absolute;
+  inset: 0 0 0 var(--main-column-width);
+  display: grid;
+  visibility: hidden;
+  opacity: 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--inner-padding);
+  transition: visibility 0.2s, opacity 0.2s;
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+  }
+}
+
+.sub-menu--not-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
