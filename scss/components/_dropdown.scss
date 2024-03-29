@@ -10,6 +10,12 @@
   visibility: hidden;
   transition: opacity 0.2s, visibility 0.2s;
 
+  @include abstract.breakpoint(lg) {
+    position: initial;
+    display: none;
+    padding-top: 0;
+  }
+
   &__inner {
     --inner-padding: 30px;
     position: relative;
@@ -26,6 +32,19 @@
       transform: translateX(-50%);
       filter: var(--dropdown-arrow);
     }
+
+    @include abstract.breakpoint(lg) {
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      padding: 0 40px;
+      &::before {
+        content: none;
+      }
+    }
+    @include abstract.breakpoint(sm) {
+      padding: 0 20px;
+    }
   }
 }
 
@@ -39,12 +58,27 @@
     width: var(--main-column-width);
     border-right: 1.5px solid var(--top-menu-border);
     overflow-y: auto;
+
+    @include abstract.breakpoint(lg) {
+      width: 100%;
+      height: auto;
+      border-right: none;
+      overflow-y: auto;
+    }
   }
 }
 
 .menu-column {
   display: flex;
   column-gap: 14px;
+
+  + .menu-column {
+    margin-top: 22px;
+  }
+
+  @include abstract.breakpoint(lg) {
+    margin-top: 10px;
+  }
 
   &__icon {
     position: relative;
@@ -54,6 +88,10 @@
 
     @include abstract.breakpoint(xl) {
       display: none;
+    }
+
+    @include abstract.breakpoint(lg) {
+      display: block;
     }
   }
 
@@ -83,10 +121,19 @@
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.5;
+
+    @include abstract.breakpoint(lg) {
+      margin-bottom: 26px;
+    }
   }
 
   &__list {
     margin-top: 20px;
+
+    @include abstract.breakpoint(lg) {
+      margin-top: 0;
+      height: auto;
+    }
   }
 
   &__item {
@@ -119,14 +166,32 @@
   gap: var(--inner-padding);
   transition: visibility 0.2s, opacity 0.2s;
 
+  @include abstract.breakpoint(lg) {
+    position: initial;
+    grid-template-columns: 1fr;
+    display: none;
+    visibility: visible;
+    opacity: 1;
+    padding-left: 0;
+    height: auto;
+  }
+
   &__column {
     display: flex;
     flex-direction: column;
     row-gap: 36px;
+    @include abstract.breakpoint(lg) {
+      row-gap: 0;
+    }
   }
 }
 
 .sub-menu--not-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  @include abstract.breakpoint(lg) {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 }

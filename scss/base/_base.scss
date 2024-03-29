@@ -27,12 +27,14 @@ button {
   border: none;
 }
 
+a,
 button,
 input,
 textarea,
 select {
   font-family: inherit;
   color: inherit;
+  -webkit-tab-highlight-color: transparent !important;
 }
 
 .icon {
