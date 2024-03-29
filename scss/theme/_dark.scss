@@ -12,7 +12,7 @@ html.dark {
   --top-action-shadow: rgba(0, 0, 0, 0.2);
   --top-action-separate: #ededf6;
 
-  @include abstract.breakpoint(lg) {
+  @include abstract.screen(lg) {
     --header-shadow: rgba(0, 0, 0, 0.2);
   }
 
@@ -28,4 +28,18 @@ html.dark {
   // Sidebar
   --sidebar-bg: #292e39;
   --sidebar-shadow: rgba(23, 28, 40, 0.4);
+
+  // category
+  --cate-item-bg: #171c28;
+  --cate-item-img-bg: #292e39;
+  --cate-item-title: #fff;
+
+  // Buttons
+  --filter-btn: #fff;
+  --filter-btn-bg: #171c28;
+  --like-btn-shadow: rgba(124, 124, 124, 0.2);
+
+  // Product-card
+  --product-card-bg: #171c28;
+  --product-card-shadow: rgba(0, 0, 0, 0.2);
 }
