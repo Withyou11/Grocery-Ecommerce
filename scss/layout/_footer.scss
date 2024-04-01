@@ -1,7 +1,6 @@
 @use "../abstract";
 
 .footer {
-  margin-top: 100px;
   background: var(--header-bg);
   @include abstract.screen(sm) {
     display: inline-block;
