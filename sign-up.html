@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grocery Mart</title>
+    <title>Sign up</title>
 
     <!-- Favicon -->
     <link
@@ -43,18 +43,162 @@
     <script src="./assets/js/script.js"></script>
   </head>
   <body>
-    <!-- Header -->
-    <header id="header"></header>
-    <script>
-      load("#header", "./templates/header.html");
-    </script>
+    <main class="auth">
+      <!-- Auth intro -->
+      <div class="auth__intro">
+        <!-- Logo -->
+        <a href="./" class="logo auth__intro-logo d-none d-md-flex">
+          <img
+            src="./assets/icons/logo.svg"
+            alt="grocerymart"
+            class="logo__img"
+          />
+          <h1 class="logo__title">grocerymart</h1>
+        </a>
+        <img src="./assets/img/intro.svg" alt="" class="auth__intro__img" />
+        <p class="auth__intro__text">
+          The best of luxury brand values, high quality products, and innovative
+          services
+        </p>
 
-    <!-- Main -->
-    <h1>Sign-up</h1>
-    <!-- Footer -->
-    <footer id="footer"></footer>
+        <button
+          class="auth__intro-next d-none d-md-block js-toggle"
+          toggle-target="#auth-content"
+        >
+          <img src="./assets/img/intro-arrow.svg" alt="" />
+        </button>
+      </div>
+      <!-- Auth content -->
+      <div class="auth__content hide" id="auth-content">
+        <div class="auth__content__inner">
+          <!-- Logo -->
+          <a href="./" class="logo">
+            <img
+              src="./assets/icons/logo.svg"
+              alt="grocerymart"
+              class="logo__img"
+            />
+            <h2 class="logo__title">grocerymart</h2>
+          </a>
+
+          <h1 class="auth__heading">Sign Up</h1>
+          <p class="auth__desc">
+            Let’s create your account and Shop like a pro and save money.
+          </p>
+
+          <form action="./index-loggined.html" class="form auth__form">
+            <div class="form__group">
+              <div class="form__text-input">
+                <input
+                  type="email"
+                  name=""
+                  id=""
+                  class="form__input"
+                  placeholder="Email"
+                  required
+                  value="tintran@grocerymart.com"
+                />
+                <img
+                  src="./assets/icons/auth-1.svg"
+                  alt=""
+                  class="form__input__icon"
+                />
+
+                <img
+                  src="./assets/icons/form-error.svg"
+                  alt=""
+                  class="form__input__icon-error"
+                />
+              </div>
+              <p class="form__error">Email is not in correct format</p>
+            </div>
+
+            <div class="form__group">
+              <div class="form__text-input">
+                <input
+                  type="password"
+                  name=""
+                  id=""
+                  class="form__input"
+                  placeholder="Password"
+                  required
+                  minlength="6"
+                  value="1234567"
+                />
+                <img
+                  src="./assets/icons/auth-2.svg"
+                  alt=""
+                  class="form__input__icon"
+                />
+                <img
+                  src="./assets/icons/form-error.svg"
+                  alt=""
+                  class="form__input__icon-error"
+                />
+              </div>
+              <p class="form__error">Password is not in correct format</p>
+            </div>
+
+            <div class="form__group">
+              <div class="form__text-input">
+                <input
+                  type="password"
+                  name=""
+                  id=""
+                  class="form__input"
+                  placeholder="Confirm password"
+                  required
+                  value="1234567"
+                />
+                <img
+                  src="./assets/icons/auth-2.svg"
+                  alt=""
+                  class="form__input__icon"
+                />
+                <img
+                  src="./assets/icons/form-error.svg"
+                  alt=""
+                  class="form__input__icon-error"
+                />
+              </div>
+              <p class="form__error">Password is not in correct format</p>
+            </div>
+
+            <div class="form__group form__group--inline">
+              <label class="form__checkbox">
+                <input type="checkbox" class="form__checkbox-input" hidden />
+
+                <span class="form__checkbox-label">Set as default card</span>
+              </label>
+              <a href="#!" class="auth__link form__pull-right"
+                >Recovery Password</a
+              >
+            </div>
+
+            <div class="form__group auth__btn-group">
+              <button class="btn btn--primary auth__btn form-submit-btn">
+                Sign Up
+              </button>
+              <a href="/sign-in.html" class="btn btn--outline btn--no-margin">
+                <img
+                  src="./assets/icons/google.svg"
+                  alt=""
+                  class="icon btn-icon"
+                />
+                Sign in with Gmail
+              </a>
+            </div>
+          </form>
+
+          <p class="auth__text">
+            You have an account yet?
+            <a href="./sign-in.html" class="auth__text-link">Sign In</a>
+          </p>
+        </div>
+      </div>
+    </main>
     <script>
-      load("#footer", "./templates/footer.html");
+      window.dispatchEvent(new Event("template-loaded"));
     </script>
   </body>
 </html>

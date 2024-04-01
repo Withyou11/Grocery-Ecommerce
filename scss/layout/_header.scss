@@ -7,8 +7,14 @@
 
 .header {
   background: var(--header-bg);
+  position: relative;
+  z-index: 2;
   @include abstract.screen(lg) {
     box-shadow: 0px 20px 60px 10px var(--header-shadow);
+  }
+
+  @include abstract.screen(sm) {
+    display: inline-block;
   }
 }
 
@@ -16,7 +22,7 @@
   @extend %flexItemsCenter;
   padding: 30px 0;
   position: relative;
-
+  z-index: 1;
   @include abstract.screen(lg) {
     padding: 24px 0;
   }
@@ -24,6 +30,33 @@
   @include abstract.screen(md) {
     padding: 16px 0;
     justify-content: space-between;
+  }
+
+  &__logo {
+    @include abstract.screen(lg) {
+      gap: 10px !important;
+      margin-left: 40px;
+    }
+
+    @include abstract.screen(md) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      margin-left: 0;
+    }
+
+    &-title {
+      @include abstract.screen(lg) {
+        font-size: 1.8rem !important;
+      }
+    }
+
+    &-img {
+      @include abstract.screen(lg) {
+        width: 24px;
+      }
+    }
   }
 }
 
@@ -164,6 +197,12 @@
 
   @include abstract.screen(md) {
     margin-left: 0;
+
+    &__sign-up {
+      height: 40px !important;
+      padding: 0 8px !important;
+      font-size: 1.6rem !important;
+    }
   }
 
   &__group {

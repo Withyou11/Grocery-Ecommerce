@@ -1,0 +1,35 @@
+@use "../abstract";
+
+.footer {
+  margin-top: 100px;
+  background: var(--header-bg);
+  @include abstract.screen(sm) {
+    display: inline-block;
+  }
+}
+
+.footer__inner {
+  padding: 40px;
+}
+
+.footer__title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.footer__link {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.footer__bottom {
+  margin-top: 100px;
+}
+
+.footer__guides {
+  display: flex;
+  column-gap: 12px;
+}
