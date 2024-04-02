@@ -22,6 +22,11 @@ html {
   --menu-column-icon: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(16%) hue-rotate(338deg) brightness(93%)
     contrast(107%);
 
+  // Header
+  --header-act-dropdown-bg: #fff;
+  --header-act-dropdown-shadow: rgba(200, 200, 200, 0.4);
+  --header-act-dropdown-border: #d2d1d6;
+
   // Sidebar
   --sidebar-bg: #fff;
   --sidebar-shadow: rgba(200, 200, 200, 0.4);
