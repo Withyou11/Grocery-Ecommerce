@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+* {
+  -webkit-tab-highlight-color: transparent !important;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -37,7 +41,6 @@ select {
   padding: 0;
   font-family: inherit;
   color: inherit;
-  -webkit-tab-highlight-color: transparent !important;
   outline: none;
   border: none;
 }
@@ -55,4 +58,14 @@ input {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: 600;
 }
