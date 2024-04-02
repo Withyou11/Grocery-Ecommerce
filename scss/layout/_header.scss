@@ -340,6 +340,12 @@
     padding: 20px 0;
   }
 
+  &__separate {
+    height: 1px;
+    background: var(--header-act-dropdown-border);
+    margin: 20px 0;
+  }
+
   &__row {
     display: flex;
     align-items: center;

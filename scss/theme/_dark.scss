@@ -90,4 +90,15 @@ html.dark {
 
   // Text content
   --hr-bg: #c6c6c6;
+
+  // Checkout
+  --checkout-breadcrumbs-bg: #171c28;
+  --checkout-cart-info-bg: #171c28;
+  --checkout-cart-info-shadow: rgba(23, 28, 40, 0.2);
+  --checkout-border: #292e39;
+  --gift-shadow: rgba(23, 28, 40, 0.2);
+
+  // dialog
+  --dialog-bg: #2f3441;
+  --dialog-shadow: rgba(23, 28, 40, 0.4);
 }
