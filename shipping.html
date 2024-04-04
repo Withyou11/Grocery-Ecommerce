@@ -51,7 +51,12 @@
               </a>
             </li>
             <li class="breadcrumbs__item">
-              <a href="#!" class="breadcrumbs__link breadcrumbs__link--current">Check out</a>
+              <a href="./checkout.html" class="breadcrumbs__link">Check out</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a href="#!" class="breadcrumbs__link breadcrumbs__link--current">
+                <img src="./assets/icons/breadcrumbs.svg" alt="" class="icon breadcrumbs__icon" />Shipping
+              </a>
             </li>
           </ul>
         </div>
@@ -61,6 +66,87 @@
           <div class="row gy-xl-3">
             <div class="col-8 col-xl-12">
               <div class="cart-info">
+                <h1 class="cart-info__heading">1. Shipping, arrives between Mon, May 16—Tue, May 24</h1>
+                <div class="cart-info__separate"></div>
+
+                <!-- Checkout address -->
+
+                <div class="user-address">
+                  <div class="user-address__top">
+                    <div>
+                      <h2 class="user-address__title">Shipping address</h2>
+                      <p class="user-address__desc">Where should we deliver your order?</p>
+                    </div>
+                    <button class="btn btn--primary btn--rounded btn--small js-toggle" toggle-target="#add-new-address">
+                      <img src="./assets/icons/plus.svg" alt="" class="icon" />
+                      Add a new address
+                    </button>
+                  </div>
+
+                  <div class="user-address__list">
+                    <!-- Address card 1 -->
+                    <article class="address-card">
+                      <div class="address-card__left">
+                        <div class="address-card__choose">
+                          <!-- Custom checkbox -->
+                          <label class="address-card__checkbox">
+                            <input type="radio" name="address" class="address-card__checkbox-input" checked />
+                          </label>
+                        </div>
+                        <div class="address-card__info">
+                          <h3 class="address-card__title">Imran Khan</h3>
+                          <p class="address-card__desc">Museum of Rajas, Sylhet Sadar, Sylhet 3100.</p>
+                          <ul class="address-card__list">
+                            <li>Shipping</li>
+                            <li>Delivery from store</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="address-card__right">
+                        <div class="address-card__control">
+                          <button class="cart-info__control-btn js-toggle" toggle-target="#add-new-address">
+                            <img src="./assets/icons/edit.svg" alt="" class="icon" />
+                            Edit
+                          </button>
+                        </div>
+                      </div>
+                    </article>
+
+                    <!-- Address card 2 -->
+                    <article class="address-card">
+                      <div class="address-card__left">
+                        <div class="address-card__choose">
+                          <!-- Custom checkbox -->
+                          <label class="address-card__checkbox">
+                            <input type="radio" name="address" class="address-card__checkbox-input" />
+                          </label>
+                        </div>
+                        <div class="address-card__info">
+                          <h3 class="address-card__title">Imran Khan</h3>
+                          <p class="address-card__desc">
+                            Al Hamra City (10th Floor), Hazrat Shahjalal Road, Sylhet, Sylhet, Bangladesh
+                          </p>
+                          <ul class="address-card__list">
+                            <li>Shipping</li>
+                            <li>Delivery from store</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="address-card__right">
+                        <div class="address-card__control">
+                          <button class="cart-info__control-btn js-toggle" toggle-target="#add-new-address">
+                            <img src="./assets/icons/edit.svg" alt="" class="icon" />
+                            Edit
+                          </button>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="cart-info__separate"></div>
+
+                <h2 class="cart-info__sub-heading">Items details</h2>
+
                 <div class="cart-info__list">
                   <!-- Cart item 1 -->
                   <article class="cart-item">
@@ -252,9 +338,7 @@
                   <span>Estimated Total</span>
                   <span>$201.65</span>
                 </div>
-                <a href="./shipping.html" class="btn btn--primary btn--rounded cart-info__next-btn">
-                  Continue to checkout
-                </a>
+                <a href="./payment.html" class="btn btn--primary btn--rounded cart-info__next-btn"> Continue </a>
               </div>
               <div class="cart-info">
                 <a href="#!">
@@ -295,7 +379,93 @@
           </button>
         </div>
       </div>
+
       <div class="modal__overlay js-toggle" toggle-target="#delete-confirm"></div>
+    </div>
+
+    <!-- Modal: add new address (medium) -->
+    <div class="modal hide" id="add-new-address">
+      <!-- <button class="modal__close js-toggle" toggle-target="#add-new-address">&times;</button> -->
+      <div class="modal__content">
+        <h2 class="modal__heading">Add new shipping address</h2>
+        <div class="modal__body">
+          <form action="" class="form" autocomplete="off">
+            <div class="form__row">
+              <div class="form__group">
+                <label for="name" class="form-label form-label--small">Name</label>
+                <div class="form__text-input form__text-input--small">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="form__input"
+                    placeholder="Name"
+                    required
+                    minlength="2"
+                  />
+                  <img src="./assets/icons/form-error.svg" alt="" class="form__input__icon-error" />
+                </div>
+                <p class="form__error">Name must be at least 2 characters.</p>
+              </div>
+
+              <div class="form__group">
+                <label for="phone" class="form-label form-label--small">Phone</label>
+                <div class="form__text-input form__text-input--small">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    class="form__input"
+                    placeholder="Phone Number"
+                    required
+                    minlength="10"
+                  />
+                  <img src="./assets/icons/form-error.svg" alt="" class="form__input__icon-error" />
+                </div>
+                <p class="form__error">Phone number must be at least 10 number.</p>
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label for="address" class="form-label form-label--small">Address</label>
+              <div class="form__text-area">
+                <textarea
+                  name="address"
+                  id="address"
+                  placeholder="Address (Area and street)"
+                  class="form__text-area-input"
+                  required
+                ></textarea>
+                <img src="./assets/icons/form-error.svg" alt="" class="form__input__icon-error" />
+              </div>
+              <p class="form__error">Address is not empty.</p>
+            </div>
+
+            <div class="form__group">
+              <label for="city" class="form-label form-label--small">City/District/Town</label>
+
+              <div class="form__text-input form__text-input--small">
+                <input type="text" name="city" id="city" class="form__input" placeholder="City/District/Town" />
+              </div>
+            </div>
+
+            <label class="form__checkbox">
+              <input type="checkbox" class="form__checkbox-input" hidden />
+
+              <span class="form__checkbox-label">Set as default address</span>
+            </label>
+
+            <div class="modal__bottom">
+              <button class="btn btn--small btn--text modal__btn js-toggle" toggle-target="#add-new-address">
+                Cancel
+              </button>
+              <button class="btn btn--small btn--primary modal__btn btn--no-margin">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal__overlay"></div>
     </div>
   </body>
 </html>

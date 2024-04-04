@@ -8,9 +8,24 @@ $error-color: #ed4337;
     pointer-events: none;
   }
 
+  &__row {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+
+    @include abstract.screen(md) {
+      gap: 20px;
+    }
+
+    @include abstract.screen(sm) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
   &__group {
     margin-top: 30px;
-
+    flex: 1;
     &--inline {
       display: flex;
       align-items: center;
@@ -37,38 +52,60 @@ $error-color: #ed4337;
     }
   }
 
+  &__text-area,
   &__text-input {
     display: flex;
     align-items: center;
-    height: 50px;
-    padding: 12px;
+    padding: 0 12px;
     border-radius: 10px;
     border: 2px solid var(--Secondary-Color-Secondary-3, #d2d1d6);
+    &:focus-within {
+      border-color: #77dae6;
+    }
+
+    &--small {
+      border-radius: 8px;
+    }
+  }
+
+  &__text-area {
+    padding: 12px;
+    height: 120px;
+
+    &-input {
+      resize: none;
+    }
+  }
+
+  &__text-input {
+    height: 50px;
+
+    &--small {
+      height: 42px;
+    }
 
     @include abstract.screen(md) {
       height: 48px;
     }
+  }
 
-    &:focus-within {
-      border-color: #77dae6;
+  &__input,
+  &__text-area-input {
+    height: 100%;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44;
+    width: 100%;
+    &::placeholder {
+      color: var(--form-placeholder);
+      @include abstract.screen(md) {
+        font-size: 1.6rem;
+      }
     }
   }
 
   &__input {
     flex-grow: 1;
-    height: 100%;
-
-    font-size: 1.8rem;
-    font-weight: 500;
-    line-height: 1.44;
-
-    @include abstract.screen(md) {
-      font-size: 1.6rem;
-    }
-
-    &::placeholder {
-      color: var(--form-placeholder);
-    }
 
     &__icon {
       margin-left: 12px;
@@ -148,6 +185,13 @@ $error-color: #ed4337;
     font-size: 2.2rem;
     font-weight: 500;
     line-height: 1.45;
+
+    &--medium {
+      margin-bottom: 20px;
+      font-size: 1.8;
+      font-weight: 500;
+      line-height: 1.44;
+    }
 
     &--small {
       font-size: 1.4rem;

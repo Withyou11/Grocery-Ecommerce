@@ -26,6 +26,28 @@
     padding: 16px;
   }
 
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.41;
+  }
+
+  &__sub-heading {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44;
+  }
+
   &__list {
     margin-top: -30px;
     @include abstract.screen(md) {
@@ -89,6 +111,49 @@
 
   &__next-btn {
     margin-top: 30px;
+  }
+
+  &__control-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #9e9da8;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  &__checkbox {
+    &-input {
+      appearance: none;
+
+      &::before {
+        content: url("../icons/checkbox-uncheck.svg");
+      }
+
+      &:not(:checked)::before {
+        filter: var(--icon-color);
+      }
+
+      &:checked::before {
+        content: url("../icons/checkbox-checked.svg");
+      }
+    }
+  }
+
+  &__desc {
+    margin-top: 6px;
+    font-size: 1.5rem;
+    line-height: 1.46;
+  }
+
+  &__form {
+    margin-bottom: 30px;
   }
 }
 
@@ -179,6 +244,10 @@
     font-size: 1.5rem;
     line-height: 1.46;
     font-weight: 500;
+
+    &-btn {
+      display: flex;
+    }
   }
 
   &__content {
@@ -216,21 +285,6 @@
       margin-bottom: 16px;
     }
   }
-
-  &__control-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    color: #9e9da8;
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 1.5;
-
-    &:first-child {
-      margin-right: 10px;
-    }
-  }
 }
 
 .cart-info + .cart-info {
@@ -264,5 +318,196 @@
 
     font-size: 1.4rem;
     line-height: 20px;
+  }
+}
+
+.user-address {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    @include abstract.screen(md) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__btn {
+      @include abstract.screen(md) {
+        height: 46px;
+      }
+    }
+  }
+
+  &__list {
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44;
+  }
+
+  &__desc {
+    margin-top: 4px;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+}
+
+.address-card {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+
+  @include abstract.screen(md) {
+    flex-direction: column;
+  }
+
+  &__left {
+    flex-grow: 1;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__info {
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44;
+  }
+
+  &__desc {
+    width: min(520px, 90%);
+    margin-top: 4px;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+
+  &__list {
+    display: flex;
+    list-style: disc inside;
+    gap: 30px;
+    margin-top: 20px;
+    margin-left: 8px;
+
+    @include abstract.screen(sm) {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  &__control {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-size: 1.8rem;
+      line-height: 1.44;
+    }
+  }
+
+  &__checkbox {
+    &-input {
+      appearance: none;
+
+      &::before {
+        content: url("../icons/checkbox-uncheck.svg");
+      }
+
+      &:not(:checked)::before {
+        filter: var(--icon-color);
+      }
+
+      &:checked::before {
+        content: url("../icons/checkbox-checked.svg");
+      }
+    }
+  }
+}
+
+.payment-item {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--payment-item-bg);
+  gap: 20px;
+
+  @include abstract.screen(sm) {
+    align-items: initial;
+  }
+
+  &__thumb {
+    width: 70px;
+    height: 54px;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    gap: 20px;
+
+    @include abstract.screen(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44;
+  }
+
+  &__desc {
+    margin-top: 4px;
+    font-size: 1.5rem;
+    line-height: 1.44;
+  }
+
+  &__detail {
+    color: #0071dc;
+    font-size: 1.5rem;
+    line-height: 1.44;
+    padding: 8px;
+    padding-right: 0;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 14px;
+
+    &-input:checked + .payment-item__cost {
+      color: inherit;
+    }
+  }
+
+  &__cost {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.44;
+    color: #9e9da8;
+  }
+
+  &--pointer {
+    cursor: pointer;
   }
 }
