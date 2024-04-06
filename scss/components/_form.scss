@@ -78,14 +78,14 @@ $error-color: #ed4337;
   }
 
   &__text-input {
-    height: 50px;
+    height: 46px;
 
     &--small {
       height: 42px;
     }
 
     @include abstract.screen(md) {
-      height: 48px;
+      height: 46px;
     }
   }
 

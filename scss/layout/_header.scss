@@ -20,7 +20,7 @@
 
 .top-bar {
   @extend %flexItemsCenter;
-  padding: 30px 0;
+  padding: 16px 0;
   position: relative;
   z-index: 1;
   @include abstract.screen(lg) {
@@ -259,6 +259,22 @@
       visibility: visible;
     }
   }
+
+  &__user {
+    position: relative;
+    &:hover .act-dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__dropdown {
+    right: -15px !important;
+    width: min(300px, 100vw) !important;
+  }
+  &__arrow {
+    right: 15px !important;
+  }
 }
 
 .nav-btn {
@@ -411,5 +427,47 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.46;
+  }
+}
+
+.user-menu {
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  &__list {
+    margin-top: 30px;
+  }
+
+  &__link {
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__separate {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #d2d1d6;
+  }
+
+  &__icon {
+    width: 20px;
   }
 }
